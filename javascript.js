@@ -1,20 +1,19 @@
-console.log("hello")
+
+var currentTime = new Date()
+var currentHour = currentTime.getHours()
+var currentDate = currentTime.getDate()
+var currentWeekDay = currentTime.getDay()
+var currentMonth = currentTime.getMonth()
+var currentYear = currentTime.getUTCFullYear()
+var monthArr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+var daysInMonthArr = [31,28,31,30,31,30,31,31,30,31,30,31]
+var weekDayArr = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
 //display today date
-$("#dateDisplay").text(Date())
-
+$("#dateDisplay").text( weekDayArr[currentWeekDay] + " " + monthArr[currentMonth] + " " + currentDate + ", " + currentYear)
+$("#currentMonth").text(monthArr[currentMonth])
 //make the calendar and show current month
 function calendarSetup(){
-    var currentTime = new Date()
-    var currentHour = currentTime.getHours()
-    var currentDate = currentTime.getDate()
-    var currentWeekDay = currentTime.getDay()
-    var currentMonth = currentTime.getMonth()
-    var currentYear = currentTime.getUTCFullYear()
-    var monthArr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-    var daysInMonthArr = [31,28,31,30,31,30,31,31,30,31,30,31]
-    var weekDayArr = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-
     if(currentYear%4 === 0){
         daysInMonthArr[1] = 29
     }
@@ -22,13 +21,12 @@ function calendarSetup(){
     var tempWeekNum = firstOfMonth.getDay()
     var weekdayCounter = tempWeekNum
     var dayOfMonthCounter = 1
-    console.log(tempWeekNum)
 
             var newTbRow = $("<tr class = 'tbrow'>")
             $("#month").append(newTbRow)
 
         for (i=0; i<weekDayArr.length;i++){
-            var newTbCol = $("<th>")
+            var newTbCol = $("<th class = 'tbrow'>")
                 newTbCol.text(weekDayArr[i])
             newTbRow.append(newTbCol)
         }
@@ -66,7 +64,25 @@ function pageSetup(){
     })
 }
 pageSetup()
+
+function getSelectDate(date){
+    var dateStr = ""
+    var monthSel = currentMonth
+    var yearSel = currentYear
+    dateStr = monthSel + date + yearSel
+
+    console.log(dateStr) 
+}
+
+//highlights date clicked on calendar
+$(document).on("click", ".tbcol", function(){
+    $(".tbcol").removeClass("highlight")
+    $(this).addClass("highlight")
+    getSelectDate($(this).text())
+})
+
 $(document).on("click", ".saveButton", function(){
+    console.log($(this).siblings(".timeSec").text())
     localStorage.setItem($(this).siblings(".timeSec").text(), $(this).siblings(".inputSec").text())
     localStorage.getItem($(this).siblings(".timeSec").text())
 })

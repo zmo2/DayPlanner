@@ -23,3 +23,7 @@
 .tbrow, .tbcol{
     border-style: solid;
 }
+
+.highlight{
+    background-color: aqua;
+}

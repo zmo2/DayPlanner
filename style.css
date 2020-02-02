@@ -1,0 +1,25 @@
+.plannerRows{
+    border-style: solid;   
+}
+
+.timeSec{
+    border-right-style: solid;
+
+    margin: 0;
+    padding: 0;
+}
+
+.inputSec{
+    background-color: yellow;
+    margin: 0;
+    padding: 0;
+}
+
+.saveButton{
+    height:100%;
+
+}
+
+.tbrow, .tbcol{
+    border-style: solid;
+}

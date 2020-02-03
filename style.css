@@ -20,11 +20,30 @@
 
 }
 
-.tbrow, .tbcol{
+.tbrow, .tbcol, .emptyCol{
     border-style: solid;
     width: 200px;
+    height: 150px;
+    text-align: center;
+}
+
+.tbhead{
+    border-style: solid;
+    text-align: center;
 }
 
 .highlight{
     background-color: aqua;
+}
+
+.past{
+    background-color: grey;
+}
+
+.future{
+    background-color: aqua;
+}
+
+.now{
+    background-color: yellow;
 }

@@ -12,23 +12,25 @@
     <title>Planner</title>
   </head>
   <body>
+        <div id="wrapper">
         <div class = "container titleSection">
-            <h1>Day Planner</h1>
-            <p id="dateDisplay"></p>
-
+            <h1 class="row"> Day Planner</h1>
+            <p class = "row" id="dateDisplay"></p>
         </div>
 
-        <div class="container midSec">
-            <button id = "prevMonth"><</button>
-            <button id = "displayCalendar">Hide Calendar</button>
-            <button id = "nextMonth">></button>
+        <div class="container">
+            <div class = "midSec">
+                <button class = "midButtons" id = "prevMonth"><</button>
+                <button class = "midButtons" id = "displayCalendar">Hide Calendar</button>
+                <button class = "midButtons" id = "nextMonth">></button>
+            </div>
         </div>
 
         <div class="container" id="calendar">
             <h2 id="currentMonth"></h2>
             <table id="month">
             </table>
-            <br><br>
+            <br>
         </div>
 
         <div class = "container plannerSection">
@@ -72,9 +74,10 @@
                 <p class = "inputSec col-sm-10" contenteditable="true" value = 16></p>
                 <button class = "saveButton col-sm-1">save</button>
             </div> 
-            <button id="clear">Clear</button>
+            <br>
+            <button class = "row" id="clear">Clear All!</button>
         </div>
-
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="javascript.js"></script>

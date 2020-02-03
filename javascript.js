@@ -42,6 +42,7 @@ $(document).on("click", ".saveButton", function(){
 $("#clear").on("click", function(){
     localStorage.clear()
     pageSetup()
+    calendarSetup()
 })
 
 //goes to the previous month 
@@ -160,7 +161,7 @@ function calendarSetup(monthDis, year){
                 }
                 dayOfMonthCounter++
                 weekdayCounter ++
-                    if(weekdayCounter > 6){
+                    if(weekdayCounter > 6 & i<daysInMonthArr[currentMonth]-1){
                         var newTbRow = $("<tr class = 'tbrow'>")
                         $("#month").append(newTbRow)
                         weekdayCounter = 0

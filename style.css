@@ -4,6 +4,7 @@ body{
 }
 #wrapper{
     max-width: 900px;
+  width: fit-content;
     margin: auto;
 }
 .midSec, .titleSection{
@@ -16,6 +17,11 @@ body{
     padding:0;
     text-align: center;
 }
+
+.plannerSection{
+    margin: auto;
+}
+
 .plannerRows{
     border-style: solid;  
     border-radius: 10px;
@@ -23,30 +29,32 @@ body{
 }
 
 .timeSec{
-    border-right-style: solid;
-    margin: 0;
+    text-align: center;
     padding: 0;
     color: #2f3c7e;
 }
 
 .inputSec{
     margin: 0;
-    padding: 0;
 }
 
-.saveButton, .midButtons{
-    height:100%;
+.midButtons{
     background-color: #FBEAEB;
+    min-width: max-content;
     border-radius: 5px;
     border-style: solid;
     border-color: #2f3c7e;
     border-width: 2px;
+    padding: 0;
 }
 
 .saveButton{
+    background-color: #FBEAEB;
     border:none;
     font-weight: bold;
     color: #2f3c7e;
+    border-radius: 5px;
+    padding: 0;
 }
 
 #clear{
@@ -64,15 +72,14 @@ body{
 .tbrow, .tbcol, .emptyCol{
     border-style: solid;
     width: 200px;
-    height: 150px;
     text-align: center;
-    margin: 0;
-    padding: 0;
+
 }
 
 .tbhead{
     border-style: solid;
     text-align: center;
+    width: 200px;
 }
 
 .highlight{

@@ -33,10 +33,15 @@ $(document).on("click", ".tbcol", function(){
 
 //when save button clicked, saves the input into local storage for that specific date and time
 $(document).on("click", ".saveButton", function(){
+    if($(this).siblings(".inputSec").text() === ""){
+        alert("nothing to save")
+    }else{
     localStorage.setItem(storeDateData + $(this).siblings(".timeSec").text(), $(this).siblings(".inputSec").text())
     localStorage.getItem(storeDateData + $(this).siblings(".timeSec").text())
     calendarSetup()
+}
 })
+
 
 //clears the localstorage on all saved events
 $("#clear").on("click", function(){

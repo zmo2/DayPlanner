@@ -4,7 +4,6 @@ body{
 }
 #wrapper{
     max-width: 900px;
-  width: fit-content;
     margin: auto;
 }
 .midSec, .titleSection{
@@ -13,13 +12,15 @@ body{
 }
 
 #calendar{
-    margin: 0;
+    margin: auto;
+    max-width: fit-content ;
     padding:0;
     text-align: center;
 }
 
 .plannerSection{
-    margin: auto;
+ margin:auto;
+    width: 100%;
 }
 
 .plannerRows{
